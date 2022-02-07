@@ -11,9 +11,7 @@ GameObject:
   - component: {fileID: 2204388120982300325}
   - component: {fileID: 2639185195912247657}
   - component: {fileID: 4620217564011286861}
-  - component: {fileID: 1857890564469257534}
   - component: {fileID: 6707015067116932466}
-  - component: {fileID: 1350285898398780039}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -86,20 +84,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &1857890564469257534
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2230719814836510416}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!143 &6707015067116932466
 CharacterController:
   m_ObjectHideFlags: 0
@@ -118,26 +102,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1350285898398780039
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2230719814836510416}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 38aaeea9e47310a4e99b4e229dbe7bd9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  walkingSpeed: 4
-  runningSpeed: 8
-  jumpSpeed: 4
-  gravity: 20
-  playerCamera: {fileID: 7934766568754780409}
-  lookSpeed: 2
-  lookXLimit: 45
-  canMove: 1
 --- !u!1 &6346680545873919675
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +113,7 @@ GameObject:
   - component: {fileID: 4080112584215965722}
   - component: {fileID: 7934766568754780409}
   - component: {fileID: 3592763330590651127}
+  - component: {fileID: 622304202704076855}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -221,3 +186,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6346680545873919675}
   m_Enabled: 1
+--- !u!114 &622304202704076855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6346680545873919675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38aaeea9e47310a4e99b4e229dbe7bd9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSens: 700
+  playerChar: {fileID: 2204388120982300325}
+  controller: {fileID: 6707015067116932466}
