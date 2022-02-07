@@ -110,9 +110,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &1480927043640912490
 GameObject:
@@ -224,9 +224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &2938272491289096169
 GameObject:
@@ -337,9 +337,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &4029063659034970985
 GameObject:
@@ -351,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2201118259175072075}
   - component: {fileID: 252940236661831091}
+  - component: {fileID: 1853620171566391616}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -392,6 +393,28 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.6592493, y: 2.4177682, z: 1.4297602}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1853620171566391616
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4029063659034970985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc3e6476944c4246bc02e0cb0c7212c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  limbs:
+  - {fileID: 2938272491289096169}
+  - {fileID: 6987184901469432251}
+  - {fileID: 253477833909016236}
+  - {fileID: 7367992535777953603}
+  - {fileID: 8034921326479889037}
+  - {fileID: 1480927043640912490}
+  - {fileID: 5566023508109201772}
 --- !u!1 &5566023508109201772
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,9 +525,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &6987184901469432251
 GameObject:
@@ -616,9 +639,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &7367992535777953603
 GameObject:
@@ -730,9 +753,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0
 --- !u!1 &8034921326479889037
 GameObject:
@@ -844,7 +867,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5c81933bdf511946994a9f91bfd0fd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
-  currentHealth: 40
-  healthPercent: 0
+  maxLimbHealth: 40
+  currentLimbHealth: 40
+  limbHealthPercent: 0
   colourChange: 0

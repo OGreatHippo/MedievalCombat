@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
                 target = tag.collider.transform;
 
                 transform.LookAt(target);
+
                 playerChar.LookAt(target);
 
                 float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);

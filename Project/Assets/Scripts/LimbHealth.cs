@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LimbHealth : MonoBehaviour
 {
-    [SerializeField] private float maxHealth = 40f;
-    [SerializeField] private float currentHealth = 40f;
+    [SerializeField] private float maxLimbHealth = 40f;
+    [SerializeField] private float currentLimbHealth = 40f;
 
-    [SerializeField] private float healthPercent;
+    [SerializeField] private float limbHealthPercent;
     [SerializeField] private float colourChange;
 
     private Renderer objRenderer;
@@ -16,30 +16,40 @@ public class LimbHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        currentHealth = maxHealth;
+        currentLimbHealth = maxLimbHealth;
         objRenderer = gameObject.GetComponent<Renderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        healthPercent = currentHealth / maxHealth * 100;
+        limbHealthPercent = currentLimbHealth / maxLimbHealth * 100;
 
-        colourChange = healthPercent / 100; 
+        colourChange = limbHealthPercent / 100; 
 
         Color c = Color.Lerp(Color.red, Color.green, colourChange);
 
         objRenderer.material.color = c;
 
-        if(currentHealth <= 0)
+        if(currentLimbHealth <= 0)
         {
             objRenderer.material.color = Color.black;
             blackedOut = true;
         }
 
-        if(Input.GetKeyDown(KeyCode.J))
-        {
-            currentHealth -= 6f;
-        }
+        //if(Input.GetKeyDown(KeyCode.J))
+        //{
+        //    currentLimbHealth -= 6f;
+        //}
+    }
+
+    public float getHealth()
+    {
+        return currentLimbHealth;
+    }
+
+    public void setHealth(float hp)
+    {
+        currentLimbHealth -= hp;
     }
 }
