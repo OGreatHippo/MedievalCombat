@@ -11,6 +11,7 @@ public class LimbHealth : MonoBehaviour
     [SerializeField] private float colourChange;
 
     private Renderer objRenderer;
+    private bool blackedOut = false;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class LimbHealth : MonoBehaviour
         if(currentHealth <= 0)
         {
             objRenderer.material.color = Color.black;
+            blackedOut = true;
         }
 
         if(Input.GetKeyDown(KeyCode.J))

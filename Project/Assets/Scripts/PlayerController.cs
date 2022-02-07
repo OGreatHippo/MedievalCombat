@@ -21,17 +21,30 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if(!isLockedOn)
+        if (!isLockedOn)
         {
             mouseLook();
         }
-        
+        else
+        {
+            lockOn();
+        }
+
         playerMovement();
 
-        if(Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
-            isLockedOn = !isLockedOn;
-            print("LockedOn");
+            if(isLockedOn)
+            {
+                isLockedOn = !isLockedOn;
+                print("LockedOff");
+            }
+
+            else 
+            {
+                isLockedOn = !isLockedOn;
+                print("LockedOn");
+            }
         }
     }
 
@@ -59,5 +72,31 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerChar.Rotate(Vector3.up * mouseX);
+    }
+
+    private void lockOn()
+    {
+        RaycastHit tag;
+
+        Transform target;
+
+        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out tag, 10f))
+        {
+            if(tag.collider.tag == "Enemy")
+            {
+                target = tag.collider.transform;
+
+                transform.LookAt(target);
+                playerChar.LookAt(target);
+
+                float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+
+                if (distance >= 10)
+                {
+                    isLockedOn = !isLockedOn;
+                    print("Dwarvish: I'm too far away");
+                }
+            }  
+        }
     }
 }
