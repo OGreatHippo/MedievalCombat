@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
                 transform.LookAt(target);
 
-                playerChar.LookAt(target);
+                playerChar.transform.rotation = transform.rotation;
 
                 float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
 
