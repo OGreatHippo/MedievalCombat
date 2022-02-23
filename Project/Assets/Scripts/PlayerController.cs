@@ -9,7 +9,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed = 6f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private GameObject playerWeapon;
 
+    private GameObject playerWeapon;
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
@@ -45,6 +47,11 @@ public class PlayerController : MonoBehaviour
                 isLockedOn = !isLockedOn;
                 print("LockedOn");
             }
+        }
+
+        if(Input.GetKeyDown(Keycode.E))
+        {
+
         }
     }
 
@@ -88,7 +95,11 @@ public class PlayerController : MonoBehaviour
 
                 transform.LookAt(target);
 
-                playerChar.LookAt(target);
+                playerChar.transform.rotation = transform.rotation;
+
+                transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+
+                playerChar.transform.rotation = Quaternion.Euler(0, playerChar.transform.rotation.eulerAngles.y, 0);
 
                 float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
 
@@ -99,5 +110,13 @@ public class PlayerController : MonoBehaviour
                 }
             }  
         }
+
+        //if(isLockedOn)
+        //{
+        //    if(Input.GetKey(Keycode.Q))
+        //    {
+
+        //    }
+        //}
     }
 }

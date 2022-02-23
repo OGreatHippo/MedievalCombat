@@ -37,10 +37,10 @@ public class LimbHealth : MonoBehaviour
             blackedOut = true;
         }
 
-        //if(Input.GetKeyDown(KeyCode.J))
-        //{
-        //    currentLimbHealth -= 6f;
-        //}
+        if (Input.GetKeyDown(KeyCode.J))
+        {
+            currentLimbHealth -= 6f;
+        }
     }
 
     public float getHealth()
