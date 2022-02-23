@@ -11,10 +11,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private GameObject playerWeapon;
 
-    private GameObject playerWeapon;
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
+    private bool swingingWeapon = false;
 
     private void Start()
     {
@@ -47,11 +47,6 @@ public class PlayerController : MonoBehaviour
                 isLockedOn = !isLockedOn;
                 print("LockedOn");
             }
-        }
-
-        if(Input.GetKeyDown(Keycode.E))
-        {
-
         }
     }
 
@@ -108,15 +103,30 @@ public class PlayerController : MonoBehaviour
                     isLockedOn = !isLockedOn;
                     print("Dwarvish: I'm too far away");
                 }
+
+                if (Input.GetKeyDown(KeyCode.E))
+                {
+                    print("drawing weapon");
+
+                    swingingWeapon = !swingingWeapon;
+                }
+
+                //could add animation here when drawing weapon / sheating it
+                if(swingingWeapon)
+                {
+                    swingWeapon();
+                }
+                else
+                {
+                    print("sheating weapon");
+                    playerWeapon.SetActive(false);
+                }
             }  
         }
+    }
 
-        //if(isLockedOn)
-        //{
-        //    if(Input.GetKey(Keycode.Q))
-        //    {
-
-        //    }
-        //}
+    private void swingWeapon()
+    {
+        playerWeapon.SetActive(true);
     }
 }

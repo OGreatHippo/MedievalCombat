@@ -204,6 +204,7 @@ MonoBehaviour:
   controller: {fileID: 6707015067116932466}
   speed: 6
   gravity: -9.81
+  playerWeapon: {fileID: 1493240595924294098}
 --- !u!1001 &8351894802248420160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,41 +216,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sword
       objectReference: {fileID: 0}
+    - target: {fileID: 7448648650356445842, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.55
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7933534
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: 0.60876137
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
@@ -261,6 +266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
+--- !u!1 &1493240595924294098 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7448648650356445842, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
+  m_PrefabInstance: {fileID: 8351894802248420160}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1908694930897364726 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
