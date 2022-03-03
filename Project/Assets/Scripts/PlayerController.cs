@@ -16,6 +16,9 @@ public class PlayerController : MonoBehaviour
     private bool isLockedOn = false;
     private bool swingingWeapon = false;
 
+    [SerializeField] private float mZCoord;
+    private Vector3 mOffset;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -128,5 +131,31 @@ public class PlayerController : MonoBehaviour
     private void swingWeapon()
     {
         playerWeapon.SetActive(true);
+
+         mOffset = transform.position - GetMouseWorldPos();
+
+        //float xPos = Input.GetAxis("Mouse X");
+
+        if (Input.GetMouseButton(0))
+        {
+            print("Swinging");
+
+            //playerWeapon.transform.position.x = xPos;
+
+            playerWeapon.transform.position = GetMouseWorldPos() + mOffset;
+        }
+    }
+
+    private Vector3 GetMouseWorldPos()
+    {
+        Vector3 mousePoint = Input.mousePosition;
+
+        mousePoint.z = mZCoord;
+
+        //return Camera.main.ScreenToWorldPoint(mousePoint);
+
+        //return Camera.current.ScreenToWorldPoint(mousePoint);
+
+        return mousePoint;
     }
 }

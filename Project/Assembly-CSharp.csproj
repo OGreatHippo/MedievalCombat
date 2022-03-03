@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\LimbHealth.cs" />
+    <Compile Include="Assets\Scripts\weaponSwing.cs" />
     <Compile Include="Assets\Scripts\EnemyScript.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
   </ItemGroup>
