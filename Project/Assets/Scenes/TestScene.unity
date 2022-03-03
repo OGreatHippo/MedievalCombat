@@ -302,6 +302,10 @@ PrefabInstance:
       propertyPath: mZCoord
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1493240595924294098, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2204388120982300325, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -350,10 +354,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 4162060573319517986, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4620217564011286861, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a05380a3b422514da5c4d070d6b1752, type: 2}
+    - target: {fileID: 6346680545873919675, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: m_TagString
+      value: MainCamera
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 3619457077277805181, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
     - {fileID: 3125897810835415935, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}

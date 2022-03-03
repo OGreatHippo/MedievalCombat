@@ -10,18 +10,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float speed = 6f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private GameObject playerWeapon;
+    [SerializeField] private float tooFar = 10f;
 
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
     private bool swingingWeapon = false;
 
-    [SerializeField] private float mZCoord;
     private Vector3 mOffset;
 
     private void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.lockState = CursorLockMode.Confined;
+
+        Cursor.visible = false;
     }
 
     private void Update()
@@ -101,10 +103,11 @@ public class PlayerController : MonoBehaviour
 
                 float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
 
-                if (distance >= 10)
+                if (distance >= tooFar)
                 {
                     isLockedOn = !isLockedOn;
                     print("Dwarvish: I'm too far away");
+                    swingingWeapon = !swingingWeapon;
                 }
 
                 if (Input.GetKeyDown(KeyCode.E))
@@ -132,17 +135,15 @@ public class PlayerController : MonoBehaviour
     {
         playerWeapon.SetActive(true);
 
-         mOffset = transform.position - GetMouseWorldPos();
-
-        //float xPos = Input.GetAxis("Mouse X");
+        mOffset = playerWeapon.transform.position - GetMouseWorldPos();
 
         if (Input.GetMouseButton(0))
         {
             print("Swinging");
 
-            //playerWeapon.transform.position.x = xPos;
+            //playerWeapon.transform.position = Input.mousePosition;
 
-            playerWeapon.transform.position = GetMouseWorldPos() + mOffset;
+            playerWeapon.transform.position = GetMouseWorldPos(); //+ mOffset;
         }
     }
 
@@ -150,12 +151,10 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 mousePoint = Input.mousePosition;
 
-        mousePoint.z = mZCoord;
+        mousePoint.z = 2;
 
-        //return Camera.main.ScreenToWorldPoint(mousePoint);
+        //mousePoint.z = playerWeapon.transform.position.z;
 
-        //return Camera.current.ScreenToWorldPoint(mousePoint);
-
-        return mousePoint;
+        return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 }

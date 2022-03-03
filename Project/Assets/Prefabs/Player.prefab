@@ -1,17 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &3125897810835415935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1493240595924294098}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72859a924cf24364788e1da0da56404e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2230719814836510416
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,6 +205,8 @@ MonoBehaviour:
   speed: 6
   gravity: -9.81
   playerWeapon: {fileID: 1493240595924294098}
+  tooFar: 10
+  mZCoord: 2
 --- !u!1001 &8351894802248420160
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -258,11 +248,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7609658402210000310, guid: 10356685298b61e4f8fa115fd1e70b3d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
