@@ -20,8 +20,6 @@ public class PlayerController : MonoBehaviour
 
     private Transform target;
 
-
-
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
