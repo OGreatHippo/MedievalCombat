@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private bool isLockedOn = false;
     private bool weaponDrawn = false;
 
+    private Transform target;
+
+
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Confined;
@@ -27,20 +31,70 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (!isLockedOn)
-        {
-            mouseLook();
-        }
-        else
-        {
-            lockOn();
-        }
-
         playerMovement();
+
+        RaycastHit tag;
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            isLockedOn = !isLockedOn;
+            if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out tag, 10f))
+            {
+                if (tag.collider.tag != "Enemy")
+                {
+                    isLockedOn = false;
+                }
+
+                else
+                {
+                    isLockedOn = !isLockedOn;
+
+                    target = tag.collider.transform;
+                }
+            }
+        }
+
+        if (isLockedOn)
+        {
+            transform.LookAt(target);
+
+            playerChar.transform.rotation = transform.rotation;
+
+            transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
+
+            playerChar.transform.rotation = Quaternion.Euler(0, playerChar.transform.rotation.eulerAngles.y, 0);
+
+            float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
+
+            if (distance >= tooFar)
+            {
+                isLockedOn = !isLockedOn;
+                print("Dwarvish: I'm too far away");
+                weaponDrawn = !weaponDrawn;
+            }
+        }
+        else
+        {
+            mouseLook();
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            weaponDrawn = !weaponDrawn;
+        }
+
+        //could add animation here when drawing weapon / sheating it
+        if (weaponDrawn)
+        {
+            playerWeapon.SetActive(true);
+
+            if (Input.GetMouseButton(0))
+            {
+                swingWeapon();
+            }
+        }
+        else
+        {    
+            playerWeapon.SetActive(false);
         }
     }
 
@@ -69,69 +123,6 @@ public class PlayerController : MonoBehaviour
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
 
         playerChar.Rotate(Vector3.up * mouseX);
-    }
-
-    private void lockOn()
-    {
-        RaycastHit tag;
-
-        Transform target;
-
-        print("locking on");
-
-        if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out tag, 10f))
-        {
-            if(tag.collider.tag == "Enemy")
-            {
-                isLockedOn = true;
-
-                target = tag.collider.transform;
-
-                transform.LookAt(target);
-
-                playerChar.transform.rotation = transform.rotation;
-
-                transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-
-                playerChar.transform.rotation = Quaternion.Euler(0, playerChar.transform.rotation.eulerAngles.y, 0);
-
-                float distance = Vector3.Distance(gameObject.transform.position, target.transform.position);
-
-                if (distance >= tooFar)
-                {
-                    isLockedOn = !isLockedOn;
-                    print("Dwarvish: I'm too far away");
-                    weaponDrawn = !weaponDrawn;
-                }
-
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    weaponDrawn = !weaponDrawn;
-                }
-
-                //could add animation here when drawing weapon / sheating it
-                if (weaponDrawn)
-                {
-                    playerWeapon.SetActive(true);
-
-                    if (Input.GetMouseButton(0))
-                    {
-                        swingWeapon();
-                    }
-                }
-                else
-                {
-                    playerWeapon.SetActive(false);
-                }
-            }
-
-            else
-            {
-                isLockedOn = false;
-
-                print("Not an Enemy");
-            }
-        }
     }
 
     private void swingWeapon()
