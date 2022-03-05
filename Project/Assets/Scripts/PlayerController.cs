@@ -7,7 +7,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mouseSens = 100f;
     [SerializeField] private Transform playerChar;
     [SerializeField] private CharacterController controller;
-    [SerializeField] private float speed = 6f;
+    [SerializeField] private float speed = 0f;
+    [SerializeField] private float acceleration = 1f;
+    [SerializeField] private float maxSpeed = 6f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private GameObject playerWeapon;
     [SerializeField] private float tooFar = 10f;
@@ -139,3 +141,4 @@ public class PlayerController : MonoBehaviour
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
 }
+

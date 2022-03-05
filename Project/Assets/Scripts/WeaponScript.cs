@@ -27,7 +27,7 @@ public class WeaponScript : MonoBehaviour
             accelerationText.text = "Acceleration = " + acceleration.ToString() + "m/s^2";
 
             forceText.gameObject.SetActive(true);
-            forceText.text = "Force              = " + force.ToString() + "N";
+            forceText.text = "Force            = " + force.ToString() + "N";
         }
 
         else

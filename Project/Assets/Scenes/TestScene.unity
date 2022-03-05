@@ -378,8 +378,20 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: speed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: mZCoord
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: maxSpeed
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: acceleration
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1493240595924294098, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: m_Layer
