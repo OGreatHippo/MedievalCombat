@@ -7,8 +7,8 @@ public class LimbHealth : MonoBehaviour
     [SerializeField] private float maxLimbHealth = 40f;
     [SerializeField] private float currentLimbHealth = 40f;
 
-    [SerializeField] private float limbHealthPercent;
-    [SerializeField] private float colourChange;
+    private float limbHealthPercent;
+    private float colourChange;
 
     private Renderer objRenderer;
     private bool blackedOut = false;

@@ -11,13 +11,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private GameObject playerWeapon;
     [SerializeField] private float tooFar = 10f;
+    [SerializeField] private float mZCoord = 2f;
 
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
-    private bool swingingWeapon = false;
-
-    private Vector3 mOffset;
+    private bool weaponDrawn = false;
 
     private void Start()
     {
@@ -41,13 +40,13 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(isLockedOn)
+            if (isLockedOn)
             {
                 isLockedOn = !isLockedOn;
                 print("LockedOff");
             }
 
-            else 
+            else
             {
                 isLockedOn = !isLockedOn;
                 print("LockedOn");
@@ -68,6 +67,7 @@ public class PlayerController : MonoBehaviour
 
         controller.Move(velocity * Time.deltaTime);
     }
+
     private void mouseLook()
     {
         float mouseX = Input.GetAxis("Mouse X") * mouseSens * Time.deltaTime;
@@ -87,10 +87,14 @@ public class PlayerController : MonoBehaviour
 
         Transform target;
 
+        print("locking on");
+
         if(Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out tag, 10f))
         {
             if(tag.collider.tag == "Enemy")
             {
+                isLockedOn = true;
+
                 target = tag.collider.transform;
 
                 transform.LookAt(target);
@@ -107,53 +111,51 @@ public class PlayerController : MonoBehaviour
                 {
                     isLockedOn = !isLockedOn;
                     print("Dwarvish: I'm too far away");
-                    swingingWeapon = !swingingWeapon;
+                    weaponDrawn = !weaponDrawn;
                 }
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    print("drawing weapon");
-
-                    swingingWeapon = !swingingWeapon;
+                    weaponDrawn = !weaponDrawn;
                 }
 
                 //could add animation here when drawing weapon / sheating it
-                if(swingingWeapon)
+                if (weaponDrawn)
                 {
-                    swingWeapon();
+                    playerWeapon.SetActive(true);
+
+                    if (Input.GetMouseButton(0))
+                    {
+                        swingWeapon();
+                    }
                 }
                 else
                 {
-                    print("sheating weapon");
                     playerWeapon.SetActive(false);
                 }
-            }  
+            }
+
+            else
+            {
+                isLockedOn = false;
+
+                print("Not an Enemy");
+            }
         }
     }
 
     private void swingWeapon()
     {
-        playerWeapon.SetActive(true);
-
-        mOffset = playerWeapon.transform.position - GetMouseWorldPos();
-
-        if (Input.GetMouseButton(0))
-        {
-            print("Swinging");
-
-            //playerWeapon.transform.position = Input.mousePosition;
-
-            playerWeapon.transform.position = GetMouseWorldPos(); //+ mOffset;
-        }
+        playerWeapon.transform.position = GetMouseWorldPos();
     }
 
+
+    //get mouse pixel coordinates and convert to world position
     private Vector3 GetMouseWorldPos()
     {
         Vector3 mousePoint = Input.mousePosition;
 
-        mousePoint.z = 2;
-
-        //mousePoint.z = playerWeapon.transform.position.z;
+        mousePoint.z = mZCoord;
 
         return Camera.main.ScreenToWorldPoint(mousePoint);
     }
