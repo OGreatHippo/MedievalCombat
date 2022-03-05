@@ -40,17 +40,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if (isLockedOn)
-            {
-                isLockedOn = !isLockedOn;
-                print("LockedOff");
-            }
-
-            else
-            {
-                isLockedOn = !isLockedOn;
-                print("LockedOn");
-            }
+            isLockedOn = !isLockedOn;
         }
     }
 
