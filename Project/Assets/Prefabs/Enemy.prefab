@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6689188403984273374}
   m_Layer: 0
   m_Name: Stomach
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -112,8 +112,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &1480927043640912490
 GameObject:
   m_ObjectHideFlags: 0
@@ -129,7 +127,7 @@ GameObject:
   - component: {fileID: 4834502335341880649}
   m_Layer: 0
   m_Name: RLeg
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -226,8 +224,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &2938272491289096169
 GameObject:
   m_ObjectHideFlags: 0
@@ -243,7 +239,7 @@ GameObject:
   - component: {fileID: 3155587528853639672}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -339,8 +335,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &4029063659034970985
 GameObject:
   m_ObjectHideFlags: 0
@@ -430,7 +424,7 @@ GameObject:
   - component: {fileID: 611413418415523949}
   m_Layer: 0
   m_Name: LLeg
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -527,8 +521,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &6987184901469432251
 GameObject:
   m_ObjectHideFlags: 0
@@ -544,7 +536,7 @@ GameObject:
   - component: {fileID: 528717449452390522}
   m_Layer: 0
   m_Name: Thorax
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -641,8 +633,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &7367992535777953603
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +648,7 @@ GameObject:
   - component: {fileID: 1307813301053188237}
   m_Layer: 0
   m_Name: RArm
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -755,8 +745,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0
 --- !u!1 &8034921326479889037
 GameObject:
   m_ObjectHideFlags: 0
@@ -772,7 +760,7 @@ GameObject:
   - component: {fileID: 6229659694432515798}
   m_Layer: 0
   m_Name: LArm
-  m_TagString: Untagged
+  m_TagString: EnemyLimb
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -869,5 +857,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
-  limbHealthPercent: 0
-  colourChange: 0

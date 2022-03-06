@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerWeapon;
     [SerializeField] private float tooFar = 10f;
     [SerializeField] private float mZCoord = 2f;
+    [SerializeField] private float weaponRotationSpeed = 5f;
+
 
     private Vector3 velocity;
     private float xRotation;
@@ -69,7 +71,6 @@ public class PlayerController : MonoBehaviour
             {
                 isLockedOn = !isLockedOn;
                 print("Dwarvish: I'm too far away");
-                weaponDrawn = !weaponDrawn;
             }
         }
         else
@@ -128,6 +129,8 @@ public class PlayerController : MonoBehaviour
     private void swingWeapon()
     {
         playerWeapon.transform.position = GetMouseWorldPos();
+
+        playerWeapon.transform.rotation = Quaternion.Slerp(playerWeapon.transform.rotation, Quaternion.LookRotation(GetMouseWorldPos()), Time.deltaTime * weaponRotationSpeed);
     }
 
 
@@ -139,6 +142,8 @@ public class PlayerController : MonoBehaviour
         mousePoint.z = mZCoord;
 
         return Camera.main.ScreenToWorldPoint(mousePoint);
+
+        
     }
 }
 

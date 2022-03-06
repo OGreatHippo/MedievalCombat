@@ -50,9 +50,20 @@ public class WeaponScript : MonoBehaviour
 
         force = weaponMass * acceleration;
 
-        damage = force / 100;
+        damage = force;
 
         return damage;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        print("Collision detected");
+
+        if(collision.gameObject.tag == "EnemyLimb")
+        {
+            print(forceConversion());
+            collision.gameObject.GetComponent<LimbHealth>().setHealth(forceConversion());
+        }
     }
 }
 
