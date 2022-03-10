@@ -52,4 +52,14 @@ public class LimbHealth : MonoBehaviour
     {
         currentLimbHealth -= hp;
     }
+
+    private void OnTriggerEnter(Collider collision)
+    {
+        if (collision.gameObject.tag == "Weapon")
+        {
+            print("Collision detected");
+
+            setHealth(collision.gameObject.GetComponent<WeaponScript>().forceConversion());
+        }
+    }
 }
