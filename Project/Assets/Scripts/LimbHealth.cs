@@ -59,7 +59,9 @@ public class LimbHealth : MonoBehaviour
         {
             print("Collision detected");
 
-            setHealth(collision.gameObject.GetComponent<WeaponScript>().forceConversion());
+            setHealth(10);
+
+            //setHealth(collision.gameObject.GetComponent<WeaponScript>().forceConversion());
         }
     }
 }

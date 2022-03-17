@@ -55,13 +55,12 @@ public class WeaponScript : MonoBehaviour
         return damage;
     }
 
-    //private void OnCollisionEnter(Collision collision)
+    //private void OnTriggerEnter(Collision collision)
     //{
     //    print("Collision detected");
 
-    //    if(collision.gameObject.tag == "EnemyLimb")
+    //    if (collision.gameObject.tag == "EnemyLimb")
     //    {
-    //        print(forceConversion());
     //        collision.gameObject.GetComponent<LimbHealth>().setHealth(forceConversion());
     //    }
     //}
