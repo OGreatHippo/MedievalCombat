@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 9038347034784967077}
   - component: {fileID: 753945880360835676}
   - component: {fileID: 1361673655877430273}
-  - component: {fileID: 14125248388137142}
   - component: {fileID: 6689188403984273374}
+  - component: {fileID: 5014917327509110496}
+  - component: {fileID: 2309192899935906943}
   m_Layer: 0
   m_Name: Stomach
   m_TagString: EnemyLimb
@@ -84,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &14125248388137142
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 253477833909016236}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6689188403984273374
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,6 +99,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!64 &5014917327509110496
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253477833909016236}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2309192899935906943
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 253477833909016236}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &1480927043640912490
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,8 +140,9 @@ GameObject:
   - component: {fileID: 92920384207405896}
   - component: {fileID: 2565504265897410986}
   - component: {fileID: 6305023254351438234}
-  - component: {fileID: 7482913153329132893}
   - component: {fileID: 4834502335341880649}
+  - component: {fileID: 3537489358507415261}
+  - component: {fileID: 2401672368362867978}
   m_Layer: 0
   m_Name: RLeg
   m_TagString: EnemyLimb
@@ -196,20 +214,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &7482913153329132893
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1480927043640912490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4834502335341880649
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +228,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!54 &3537489358507415261
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480927043640912490}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &2401672368362867978
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1480927043640912490}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.000000059604645, z: 0}
 --- !u!1 &2938272491289096169
 GameObject:
   m_ObjectHideFlags: 0
@@ -235,8 +269,9 @@ GameObject:
   - component: {fileID: 7801025221688258101}
   - component: {fileID: 1798569486954647675}
   - component: {fileID: 3965970114805940956}
-  - component: {fileID: 4358033602549878148}
   - component: {fileID: 3155587528853639672}
+  - component: {fileID: 8752794333707285740}
+  - component: {fileID: 955545480077797798}
   m_Layer: 0
   m_Name: Head
   m_TagString: EnemyLimb
@@ -308,19 +343,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &4358033602549878148
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2938272491289096169}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3155587528853639672
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -335,6 +357,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!54 &8752794333707285740
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938272491289096169}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!135 &955545480077797798
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2938272491289096169}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4029063659034970985
 GameObject:
   m_ObjectHideFlags: 0
@@ -420,8 +471,9 @@ GameObject:
   - component: {fileID: 6980668414179864475}
   - component: {fileID: 4547881510462324061}
   - component: {fileID: 3866833449247143825}
-  - component: {fileID: 3936336869701351579}
   - component: {fileID: 611413418415523949}
+  - component: {fileID: 743456555329312485}
+  - component: {fileID: 4327122111424235109}
   m_Layer: 0
   m_Name: LLeg
   m_TagString: EnemyLimb
@@ -493,20 +545,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3936336869701351579
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5566023508109201772}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &611413418415523949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,6 +559,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!54 &743456555329312485
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566023508109201772}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &4327122111424235109
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5566023508109201772}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.000000059604645, z: 0}
 --- !u!1 &6987184901469432251
 GameObject:
   m_ObjectHideFlags: 0
@@ -532,8 +600,9 @@ GameObject:
   - component: {fileID: 7495292115216105426}
   - component: {fileID: 6101528465203823568}
   - component: {fileID: 2171446211117136299}
-  - component: {fileID: 5602714569184230236}
   - component: {fileID: 528717449452390522}
+  - component: {fileID: 1441781715006428995}
+  - component: {fileID: 2977625804330646830}
   m_Layer: 0
   m_Name: Thorax
   m_TagString: EnemyLimb
@@ -605,20 +674,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5602714569184230236
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6987184901469432251}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &528717449452390522
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -633,6 +688,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!64 &1441781715006428995
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987184901469432251}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &2977625804330646830
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6987184901469432251}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
 --- !u!1 &7367992535777953603
 GameObject:
   m_ObjectHideFlags: 0
@@ -644,8 +729,9 @@ GameObject:
   - component: {fileID: 6992982556327360463}
   - component: {fileID: 4769501198601684811}
   - component: {fileID: 8898312595114144711}
-  - component: {fileID: 3728656648406486548}
   - component: {fileID: 1307813301053188237}
+  - component: {fileID: 4796378037715812128}
+  - component: {fileID: 851154330609109608}
   m_Layer: 0
   m_Name: RArm
   m_TagString: EnemyLimb
@@ -717,20 +803,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &3728656648406486548
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7367992535777953603}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1307813301053188237
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -745,6 +817,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!54 &4796378037715812128
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367992535777953603}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &851154330609109608
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7367992535777953603}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8034921326479889037
 GameObject:
   m_ObjectHideFlags: 0
@@ -756,8 +858,9 @@ GameObject:
   - component: {fileID: 1911310488307743986}
   - component: {fileID: 6259104859648057817}
   - component: {fileID: 262926437965942425}
-  - component: {fileID: 8727158499176713785}
   - component: {fileID: 6229659694432515798}
+  - component: {fileID: 3921595867792904004}
+  - component: {fileID: 2740726868629243590}
   m_Layer: 0
   m_Name: LArm
   m_TagString: EnemyLimb
@@ -829,20 +932,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &8727158499176713785
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8034921326479889037}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6229659694432515798
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -857,3 +946,33 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLimbHealth: 40
   currentLimbHealth: 40
+--- !u!54 &3921595867792904004
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034921326479889037}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 126
+  m_CollisionDetection: 0
+--- !u!136 &2740726868629243590
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8034921326479889037}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

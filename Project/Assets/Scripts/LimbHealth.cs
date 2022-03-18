@@ -36,11 +36,6 @@ public class LimbHealth : MonoBehaviour
             objRenderer.material.color = Color.black;
             blackedOut = true;
         }
-
-        if (Input.GetKeyDown(KeyCode.J))
-        {
-            currentLimbHealth -= 6f;
-        }
     }
 
     public float getHealth()
@@ -48,20 +43,33 @@ public class LimbHealth : MonoBehaviour
         return currentLimbHealth;
     }
 
-    public void setHealth(float hp)
+    private void setHealth(float hp)
     {
         currentLimbHealth -= hp;
     }
 
-    private void OnTriggerEnter(Collider collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Weapon")
         {
-            print("Collision detected");
+            setHealth(collision.gameObject.GetComponent<WeaponScript>().getDamage());
 
-            setHealth(10);
+            if(collision.gameObject.GetComponent<WeaponScript>().getDamage() >= maxLimbHealth)
+            {
+                print("DECAPITATIOOOOOOOOOOON");
+            }
 
-            //setHealth(collision.gameObject.GetComponent<WeaponScript>().forceConversion());
+            if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 2 && collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth)
+            {
+                print("MANY BLOOD! HANDLE IT!");
+            }
+
+            if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 4 !& collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth / 2)
+            {
+                print("Blood,  blood, BLOOD! ... and bits of sick");
+            }
+
+            print(collision.gameObject.GetComponent<WeaponScript>().getDamage());
         }
     }
 }

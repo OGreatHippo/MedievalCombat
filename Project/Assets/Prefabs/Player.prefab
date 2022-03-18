@@ -117,7 +117,7 @@ GameObject:
   - component: {fileID: 622304202704076855}
   m_Layer: 0
   m_Name: Camera
-  m_TagString: Untagged
+  m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -203,10 +203,13 @@ MonoBehaviour:
   playerChar: {fileID: 2204388120982300325}
   controller: {fileID: 6707015067116932466}
   speed: 6
+  acceleration: 1
+  maxSpeed: 6
   gravity: -9.81
   playerWeapon: {fileID: 1493240595924294098}
   tooFar: 10
   mZCoord: 2
+  weaponRotationSpeed: 5
 --- !u!1001 &8351894802248420160
 PrefabInstance:
   m_ObjectHideFlags: 0

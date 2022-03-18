@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 392106281897392575}
   - component: {fileID: 6427582496410298318}
   - component: {fileID: 5342808580626881634}
-  - component: {fileID: 5029978930141924923}
   - component: {fileID: 1282681992157778758}
   m_Layer: 0
   m_Name: Capsule
-  m_TagString: Untagged
+  m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,20 +98,6 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
---- !u!136 &5029978930141924923
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2459286057501931612}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.516268
-  m_Height: 2.0000005
-  m_Direction: 1
-  m_Center: {x: 0.4, y: 0.4, z: 0.4}
 --- !u!114 &1282681992157778758
 MonoBehaviour:
   m_ObjectHideFlags: 0

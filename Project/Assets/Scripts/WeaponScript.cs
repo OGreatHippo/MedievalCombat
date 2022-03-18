@@ -42,7 +42,7 @@ public class WeaponScript : MonoBehaviour
         }
     }
 
-    public float forceConversion()
+    private float forceConversion()
     {
         acceleration = (transform.position - this.mLastPosition).magnitude / Time.deltaTime;
 
@@ -52,17 +52,12 @@ public class WeaponScript : MonoBehaviour
 
         damage = force;
 
-        return damage;
+        return damage;  
     }
 
-    //private void OnTriggerEnter(Collision collision)
-    //{
-    //    print("Collision detected");
-
-    //    if (collision.gameObject.tag == "EnemyLimb")
-    //    {
-    //        collision.gameObject.GetComponent<LimbHealth>().setHealth(forceConversion());
-    //    }
-    //}
+    public float getDamage()
+    {
+        return damage;
+    }
 }
 
