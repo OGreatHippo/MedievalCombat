@@ -6,12 +6,14 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField] private float maxHealth;
     [SerializeField] private float currentHealth;
-    [SerializeField] private List<GameObject> limbs;
+    [SerializeField] private GameObject[] limbs;
 
     // Start is called before the first frame update
     void Start()
     {
-        for (int i = 0; i < limbs.Count; i++)
+        limbs = GameObject.FindGameObjectsWithTag("EnemyLimb");
+
+        for (int i = 0; i < limbs.Length; i++)
         {
             maxHealth += gameObject.GetComponentInChildren<LimbHealth>().getHealth();
         }

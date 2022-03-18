@@ -1031,7 +1031,7 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0
+  m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -1160,6 +1160,14 @@ PrefabInstance:
     - target: {fileID: 5602714569184230236, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6648352745602516733, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6933879821708131600, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6987184901469432251, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_TagString
