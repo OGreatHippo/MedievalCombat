@@ -111,6 +111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weaponMass: 1.8
+  acceleration: 0
   accelerationText: {fileID: 0}
   forceText: {fileID: 0}
 --- !u!1 &5910273434326609730

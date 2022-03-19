@@ -8,6 +8,8 @@ public class EnemyScript : MonoBehaviour
     [SerializeField] private float currentHealth;
     [SerializeField] private GameObject[] limbs;
 
+    private float totalHealth;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +26,11 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
+    }
+
+    public float setTotalHealth(float change)
+    {
+        return currentHealth -= change;
     }
 }

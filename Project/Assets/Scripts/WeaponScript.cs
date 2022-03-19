@@ -8,7 +8,7 @@ public class WeaponScript : MonoBehaviour
     [SerializeField] private float weaponMass;
 
     private bool showValues = true;
-    private float acceleration;
+    public float acceleration;
     private float force;
     private float damage;
 

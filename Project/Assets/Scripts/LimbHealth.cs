@@ -8,6 +8,7 @@ public class LimbHealth : MonoBehaviour
     [SerializeField] private float currentLimbHealth = 40f;
     private float bleed;
     private float bleedAmount;
+    private float currentBleed;
 
     private float limbHealthPercent;
     private float colourChange;
@@ -72,27 +73,35 @@ public class LimbHealth : MonoBehaviour
             {
                 bleed = 100f;
                 bleedAmount = 100f;
+                currentBleed = bleedAmount;
                 bleeding = true;
                 gameObject.transform.parent = null;
                 print("DECAPITATIOOOOOOOOOOON");
             }
 
-            if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 2 && collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth)
+            if(currentBleed < 100f)
             {
-                bleed = 1f;
-                bleedAmount = 10f;
-                bleeding = true;
-                print("MANY BLOOD! HANDLE IT!");
-            }
+                if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 2 && collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth)
+                {
+                    bleed = 1f;
+                    bleedAmount = 10f;
+                    currentBleed = bleedAmount;
+                    bleeding = true;
+                    print("MANY BLOOD! HANDLE IT!");
+                }
 
-            if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 4 !& collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth / 2)
-            {
-                bleed = 0.1f;
-                bleedAmount = 1f;
-                bleeding = true;
-                print("Blood,  blood, BLOOD! ... and bits of sick");
+                if(currentBleed < 10f)
+                {
+                    if (collision.gameObject.GetComponent<WeaponScript>().getDamage() > maxLimbHealth / 4! & collision.gameObject.GetComponent<WeaponScript>().getDamage() < maxLimbHealth / 2)
+                    {
+                        bleed = 0.1f;
+                        bleedAmount = 1f;
+                        currentBleed = bleedAmount;
+                        bleeding = true;
+                        print("Blood,  blood, BLOOD! ... and bits of sick");
+                    }
+                }
             }
-
             print(collision.gameObject.GetComponent<WeaponScript>().getDamage());
         }
     }

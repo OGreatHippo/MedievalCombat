@@ -582,6 +582,7 @@ PrefabInstance:
     - {fileID: 3619457077277805181, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
     - {fileID: 3125897810835415935, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
     - {fileID: 3902922394930365819, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+    - {fileID: 9086350783796007143, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
 --- !u!1 &789805445
 GameObject:
@@ -1069,9 +1070,25 @@ PrefabInstance:
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 252940236661831091, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: f9b1e24ea2ff3d04a868a1383aec6d1a, type: 2}
     - target: {fileID: 253477833909016236, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_TagString
       value: EnemyLimb
+      objectReference: {fileID: 0}
+    - target: {fileID: 851154330609109608, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 955545480077797798, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1441781715006428995, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1480927043640912490, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_TagString
@@ -1121,6 +1138,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2401672368362867978, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2740726868629243590, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2938272491289096169, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_TagString
       value: EnemyLimb
@@ -1141,6 +1166,10 @@ PrefabInstance:
       propertyPath: m_Convex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4327122111424235109, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4358033602549878148, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_Radius
       value: 0.51
@@ -1152,6 +1181,10 @@ PrefabInstance:
     - target: {fileID: 4358033602549878148, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_IsTrigger
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5014917327509110496, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+      propertyPath: m_Material
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5566023508109201772, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
       propertyPath: m_TagString

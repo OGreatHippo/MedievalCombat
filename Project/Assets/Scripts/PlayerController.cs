@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mZCoord = 2f;
     [SerializeField] private float weaponRotationSpeed = 5f;
 
-
+    private Vector3 mouseLastPos;
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
@@ -128,10 +128,23 @@ public class PlayerController : MonoBehaviour
 
     private void swingWeapon()
     {
-        playerWeapon.transform.position = GetMouseWorldPos();
+        //playerWeapon.transform.position = GetMouseWorldPos();
 
-        playerWeapon.transform.rotation = Quaternion.Slerp(playerWeapon.transform.rotation, Quaternion.LookRotation(GetMouseWorldPos()), Time.deltaTime * weaponRotationSpeed);
+        acceleration += (Input.mousePosition - mouseLastPos).magnitude / Time.deltaTime;
+
+        mouseLastPos = transform.position;
+
+        playerWeapon.transform.position = Vector3.MoveTowards(playerWeapon.transform.position, GetMouseWorldPos(), acceleration);
     }
+
+    //private Vector3 mouseDelta()
+    //{
+    //    Vector3 mouseCurrentPos = Input.mousePosition;
+
+    //    mouseCurrentPos.z = mZCoord;
+
+    //    return mouseCurrentPos - mouseStartPos;
+    //}
 
 
     //get mouse pixel coordinates and convert to world position
@@ -142,8 +155,6 @@ public class PlayerController : MonoBehaviour
         mousePoint.z = mZCoord;
 
         return Camera.main.ScreenToWorldPoint(mousePoint);
-
-        
     }
 }
 
