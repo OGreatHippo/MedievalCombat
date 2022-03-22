@@ -411,8 +411,12 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: smoothTime
+      value: 0.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: acceleration
-      value: 24
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: playerWeapon

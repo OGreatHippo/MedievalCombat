@@ -8,21 +8,20 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform playerChar;
     [SerializeField] private CharacterController controller;
     [SerializeField] private float speed = 0f;
-    [SerializeField] private float acceleration = 1f;
-    [SerializeField] private float maxSpeed = 6f;
     [SerializeField] private float gravity = -9.81f;
     [SerializeField] private GameObject playerWeapon;
     [SerializeField] private float tooFar = 10f;
     [SerializeField] private float mZCoord = 2f;
-    [SerializeField] private float weaponRotationSpeed = 5f;
 
-    private Vector3 mouseLastPos;
+    private Vector3 lastMousePosition;
     private Vector3 velocity;
     private float xRotation;
     private bool isLockedOn = false;
     private bool weaponDrawn = false;
 
     private Transform target;
+
+    private float smoothTime = 0.03f;
 
     private void Start()
     {
@@ -130,22 +129,20 @@ public class PlayerController : MonoBehaviour
     {
         //playerWeapon.transform.position = GetMouseWorldPos();
 
-        acceleration += (Input.mousePosition - mouseLastPos).magnitude / Time.deltaTime;
+       // mouseLastPos = transform.position;
 
-        mouseLastPos = transform.position;
+        Vector3 velocity = Vector3.zero;
 
-        playerWeapon.transform.position = Vector3.MoveTowards(playerWeapon.transform.position, GetMouseWorldPos(), acceleration);
+        Vector3 currentMousePosition = Input.mousePosition;
+
+        Vector3 delta = currentMousePosition - lastMousePosition;
+
+        float distance = delta.magnitude;
+
+        lastMousePosition = currentMousePosition;
+
+        playerWeapon.transform.position = Vector3.SmoothDamp(playerWeapon.transform.position, GetMouseWorldPos(), ref velocity, smoothTime);
     }
-
-    //private Vector3 mouseDelta()
-    //{
-    //    Vector3 mouseCurrentPos = Input.mousePosition;
-
-    //    mouseCurrentPos.z = mZCoord;
-
-    //    return mouseCurrentPos - mouseStartPos;
-    //}
-
 
     //get mouse pixel coordinates and convert to world position
     private Vector3 GetMouseWorldPos()
