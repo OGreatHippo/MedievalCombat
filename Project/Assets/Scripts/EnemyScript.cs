@@ -4,33 +4,32 @@ using UnityEngine;
 
 public class EnemyScript : MonoBehaviour
 {
-    [SerializeField] private float maxHealth;
-    [SerializeField] private float currentHealth;
-    [SerializeField] private GameObject[] limbs;
+    [SerializeField] private LimbHealth[] limbs;
 
-    private float totalHealth;
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        limbs = GameObject.FindGameObjectsWithTag("EnemyLimb");
-
-        for (int i = 0; i < limbs.Length; i++)
-        {
-            maxHealth += gameObject.GetComponentInChildren<LimbHealth>().getHealth();
-        }
-
-        currentHealth = maxHealth;
-    }
+    private int brokenLimbs;
+    private float bleed;
 
     // Update is called once per frame
     void Update()
     {
-
+        //print(brokenLimbs);
     }
 
-    public float setTotalHealth(float change)
+    public float getBleedDamage(float damage)
     {
-        return currentHealth -= change;
+        return bleed = damage;
     }
+
+    //private float setLimbHealth()
+    //{
+    //    for(int i = 0; i < limbs.Length; i++)
+    //    {
+    //        if (limbs[i].getBlackedOut() == false)
+    //        {
+    //            break;
+    //        }
+
+    //        return limbs[i].dealDamage(bleed / brokenLimbs);
+    //    }
+    //}
 }

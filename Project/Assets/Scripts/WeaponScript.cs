@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class WeaponScript : MonoBehaviour
 {
-    [SerializeField] private float weaponMass;
+    [SerializeField] public float weaponMass;
 
     private bool showValues = true;
-    public float acceleration;
+    private float acceleration;
     private float force;
     private float damage;
 

@@ -129,19 +129,23 @@ public class PlayerController : MonoBehaviour
     {
         //playerWeapon.transform.position = GetMouseWorldPos();
 
-       // mouseLastPos = transform.position;
+        //// mouseLastPos = transform.position;
 
-        Vector3 velocity = Vector3.zero;
+        // Vector3 velocity = Vector3.zero;
 
-        Vector3 currentMousePosition = Input.mousePosition;
+        // Vector3 currentMousePosition = Input.mousePosition;
 
-        Vector3 delta = currentMousePosition - lastMousePosition;
+        // Vector3 delta = currentMousePosition - lastMousePosition;
 
-        float distance = delta.magnitude;
+        // float distance = delta.magnitude;
 
-        lastMousePosition = currentMousePosition;
+        // lastMousePosition = currentMousePosition;
 
-        playerWeapon.transform.position = Vector3.SmoothDamp(playerWeapon.transform.position, GetMouseWorldPos(), ref velocity, smoothTime);
+        playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass;
+
+        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos();
+
+       // playerWeapon.transform.position = Vector3.SmoothDamp(playerWeapon.transform.position, GetMouseWorldPos(), ref velocity, smoothTime);
     }
 
     //get mouse pixel coordinates and convert to world position
