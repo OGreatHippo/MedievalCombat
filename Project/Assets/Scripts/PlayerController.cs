@@ -135,9 +135,9 @@ public class PlayerController : MonoBehaviour
 
         mOffset = playerWeapon.transform.position - GetMouseWorldPos();
 
-        playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass;
+        playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass * 10;
 
-        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos() - mOffset * 2;
+        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos() - mOffset * 4;
     }
 
     //get mouse pixel coordinates and convert to world position

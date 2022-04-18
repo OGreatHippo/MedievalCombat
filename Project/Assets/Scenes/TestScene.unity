@@ -442,6 +442,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 789805447}
     - target: {fileID: 2159314748617068476, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: weaponMass
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2159314748617068476, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: accelerationText
       value: 
       objectReference: {fileID: 260409642}
