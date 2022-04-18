@@ -91,6 +91,10 @@ public class PlayerController : MonoBehaviour
             {
                 swingWeapon();
             }
+            else
+            {
+                playerWeapon.GetComponent<Rigidbody>().velocity = new Vector3(0, 0, 0);
+            }
         }
         else
         {    
@@ -127,25 +131,13 @@ public class PlayerController : MonoBehaviour
 
     private void swingWeapon()
     {
-        //playerWeapon.transform.position = GetMouseWorldPos();
+        Vector3 mOffset;
 
-        //// mouseLastPos = transform.position;
-
-        // Vector3 velocity = Vector3.zero;
-
-        // Vector3 currentMousePosition = Input.mousePosition;
-
-        // Vector3 delta = currentMousePosition - lastMousePosition;
-
-        // float distance = delta.magnitude;
-
-        // lastMousePosition = currentMousePosition;
+        mOffset = playerWeapon.transform.position - GetMouseWorldPos();
 
         playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass;
 
-        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos();
-
-       // playerWeapon.transform.position = Vector3.SmoothDamp(playerWeapon.transform.position, GetMouseWorldPos(), ref velocity, smoothTime);
+        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos() - mOffset * 2;
     }
 
     //get mouse pixel coordinates and convert to world position

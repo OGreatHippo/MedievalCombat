@@ -44,19 +44,17 @@ public class WeaponScript : MonoBehaviour
 
     private float forceConversion()
     {
-        acceleration = (transform.position - this.mLastPosition).magnitude / Time.deltaTime;
-
-        this.mLastPosition = transform.position;
+        acceleration = gameObject.GetComponent<Rigidbody>().velocity.magnitude;
 
         force = weaponMass * acceleration;
 
-        damage = force;
-
-        return damage;  
+        return force;  
     }
 
     public float getDamage()
     {
+        damage = force;
+
         return damage;
     }
 }
