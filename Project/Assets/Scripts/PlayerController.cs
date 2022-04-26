@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject playerWeapon;
     [SerializeField] private float tooFar = 10f;
     [SerializeField] private float mZCoord = 2f;
+    [SerializeField, Range(2, 10)] private float weaponSpeedModifier = 4f;
+
 
     private Vector3 lastMousePosition;
     private Vector3 velocity;
@@ -135,9 +137,9 @@ public class PlayerController : MonoBehaviour
 
         mOffset = playerWeapon.transform.position - GetMouseWorldPos();
 
-        playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass * 10;
+        playerWeapon.GetComponent<Rigidbody>().drag = playerWeapon.GetComponent<WeaponScript>().weaponMass;
 
-        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos() - mOffset * 4;
+        playerWeapon.GetComponent<Rigidbody>().velocity = GetMouseWorldPos() - mOffset * weaponSpeedModifier;
     }
 
     //get mouse pixel coordinates and convert to world position
