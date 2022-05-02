@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float mZCoord = 2f;
     [SerializeField, Range(2, 10)] private float weaponSpeedModifier = 4f;
 
+    private GameObject enemy;
+    public GameObject newEnemy;
 
     private Vector3 lastMousePosition;
     private Vector3 velocity;
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour
     private bool weaponDrawn = false;
 
     private Transform target;
+    public Transform spawnPos;
 
     private float smoothTime = 0.03f;
 
@@ -30,6 +33,8 @@ public class PlayerController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Confined;
 
         Cursor.visible = false;
+
+        enemy = GameObject.Find("Enemy");
     }
 
     private void Update()
@@ -101,6 +106,17 @@ public class PlayerController : MonoBehaviour
         else
         {    
             playerWeapon.SetActive(false);
+        }
+
+        if(Input.GetKeyDown(KeyCode.P))
+        {
+            isLockedOn = false;
+
+            Destroy(enemy);
+
+            Instantiate(newEnemy, spawnPos);
+
+            enemy = newEnemy;
         }
     }
 

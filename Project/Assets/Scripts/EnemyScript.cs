@@ -33,6 +33,11 @@ public class EnemyScript : MonoBehaviour
             {
                 killEnemy();
             }
+
+            if(limbs[i] == null)
+            {
+                return;
+            }
         }
     }
 

@@ -198,6 +198,36 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3209983}
   m_CullTransparentMesh: 1
+--- !u!1 &61137621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 61137622}
+  m_Layer: 0
+  m_Name: spawnpos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &61137622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61137621}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &145452165 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6229659694432515798, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
@@ -422,6 +452,14 @@ PrefabInstance:
       propertyPath: maxSpeed
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: newEnemy
+      value: 
+      objectReference: {fileID: 4029063659034970985, guid: bb2dc55a49734a24d98c859d0318f8ee, type: 3}
+    - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
+      propertyPath: spawnPos
+      value: 
+      objectReference: {fileID: 61137622}
     - target: {fileID: 622304202704076855, guid: e69608ba3e28a4a469735fcca2505d62, type: 3}
       propertyPath: smoothTime
       value: 0.03

@@ -6,6 +6,8 @@ public class LimbHealth : MonoBehaviour
 {
     [SerializeField] private float maxLimbHealth = 40f;
     [SerializeField] private float currentLimbHealth = 40f;
+    [SerializeField] private float despawnTime = 5f;
+
     private float bleed;
     private float bleedAmount;
     private float currentBleed;
@@ -15,6 +17,7 @@ public class LimbHealth : MonoBehaviour
 
     private Renderer objRenderer;
     private bool bleeding = false;
+    private bool decapitated = false;
 
     private EnemyScript enemy;
 
@@ -40,6 +43,16 @@ public class LimbHealth : MonoBehaviour
         if (currentLimbHealth <= 0)
         {
             enemy.getBleedDamage(bleed * Time.deltaTime);
+        }
+
+        if (decapitated)
+        {
+            despawnTime -= Time.deltaTime;
+
+            if (despawnTime <= 0f)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -68,6 +81,7 @@ public class LimbHealth : MonoBehaviour
                 gameObject.GetComponent<SphereCollider>().isTrigger = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
+                decapitated = true;
             }
 
             else if(gameObject.name == "RArm" || gameObject.name == "LArm")
@@ -76,6 +90,7 @@ public class LimbHealth : MonoBehaviour
                 gameObject.GetComponent<CapsuleCollider>().isTrigger = false;
                 gameObject.GetComponent<Rigidbody>().isKinematic = false;
                 gameObject.GetComponent<Rigidbody>().useGravity = true;
+                decapitated = true;
             }
         }
 
