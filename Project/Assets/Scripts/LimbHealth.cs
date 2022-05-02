@@ -16,10 +16,13 @@ public class LimbHealth : MonoBehaviour
     private Renderer objRenderer;
     private bool bleeding = false;
 
+    private EnemyScript enemy;
+
     // Start is called before the first frame update
     private void Start()
     {
         currentLimbHealth = maxLimbHealth;
+        enemy = gameObject.GetComponentInParent<EnemyScript>();
         objRenderer = gameObject.GetComponent<Renderer>();
     }
 
@@ -34,10 +37,10 @@ public class LimbHealth : MonoBehaviour
             dealDamage(bleed * Time.deltaTime);
         }
 
-        //if(currentLimbHealth <= 0)
-        //{
-        //    gameObject.GetComponentInParent<EnemyScript>().getBleedDamage(currentLimbHealth);
-        //}
+        if (currentLimbHealth <= 0)
+        {
+            enemy.getBleedDamage(bleed * Time.deltaTime);
+        }
     }
 
     public float getHealth()
@@ -52,13 +55,28 @@ public class LimbHealth : MonoBehaviour
 
     public void dealDamage(float damage)
     {
-        if (damage >= maxLimbHealth)
+        if (damage >= maxLimbHealth && damage < 1000)
         {
             bleed = 100f;
             bleedAmount = 100f;
             currentBleed = bleedAmount;
             bleeding = true;
-            gameObject.transform.parent = null;
+
+            if(gameObject.name == "Head")
+            {
+                gameObject.transform.parent = null;
+                gameObject.GetComponent<SphereCollider>().isTrigger = false;
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+            }
+
+            else if(gameObject.name == "RArm" || gameObject.name == "LArm")
+            {
+                gameObject.transform.parent = null;
+                gameObject.GetComponent<CapsuleCollider>().isTrigger = false;
+                gameObject.GetComponent<Rigidbody>().isKinematic = false;
+                gameObject.GetComponent<Rigidbody>().useGravity = true;
+            }
         }
 
         if (currentBleed < 100f)

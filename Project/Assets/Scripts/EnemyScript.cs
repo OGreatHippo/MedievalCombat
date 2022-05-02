@@ -6,13 +6,12 @@ public class EnemyScript : MonoBehaviour
 {
     [SerializeField] private LimbHealth[] limbs;
 
-    private int brokenLimbs;
     private float bleed;
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //print(brokenLimbs);
+        dealBleedDamage();
     }
 
     public float getBleedDamage(float damage)
@@ -20,16 +19,28 @@ public class EnemyScript : MonoBehaviour
         return bleed = damage;
     }
 
-    //private float setLimbHealth()
-    //{
-    //    for(int i = 0; i < limbs.Length; i++)
-    //    {
-    //        if (limbs[i].getBlackedOut() == false)
-    //        {
-    //            break;
-    //        }
+    private void dealBleedDamage()
+    {
+        float damage;
 
-    //        return limbs[i].dealDamage(bleed / brokenLimbs);
-    //    }
-    //}
+        damage = bleed;
+
+        for (int i = 0; i < limbs.Length; i++)
+        {
+            limbs[i].dealDamage(damage * Time.deltaTime);
+            
+            if(limbs[i].name == "Head" && limbs[i].getHealth() <= 0 || limbs[i].name == "Thorax" && limbs[i].getHealth() <= 0)
+            {
+                killEnemy();
+            }
+        }
+    }
+
+    private void killEnemy()
+    {
+        for (int i = 0; i < limbs.Length; i++)
+        {
+            limbs[i].dealDamage(1000);
+        }
+    }
 }
